@@ -4,6 +4,9 @@
 
 // Fazendo o IMPORT do styled component
 import { Container } from './styles'
+
+// Fazendo o IMPORT do component (estilização padrão para os botões) Button
+import { Button } from '../../components/Button'
  
 // é necessário exportar a função (export)
 export function Details(){
@@ -14,6 +17,8 @@ export function Details(){
     <Container>
     <h1>Hello world!</h1>
     <span>Renan</span>
+
+    <Button/>
     </Container>
   )
 }
