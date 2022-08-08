@@ -2,6 +2,9 @@
 // Só é necessário este import caso se deseje utilizar <Frament> </Fragment> como caixa de conteúdo
 // Se não quiser fazer o import, pode se utilizar desta propriedade usando apenas <> </>
 
+// Fazendo o IMPORT do css
+import "./styles.css"
+
 // é necessário exportar a função (export)
 export function Details(){
 
