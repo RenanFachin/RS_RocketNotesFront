@@ -10,7 +10,13 @@ export const Container = styled.div`
  //Definindo a posição destes 2 elementos de grid
  grid-template-areas:
  "header"
- "content"
+ "content";
+
+ > main {
+    grid-area: content; // definindo a região do grid. Main é o content
+    overflow-y: scroll; // quando o conteudo não couber mais na vertical, terá uma barra de scroll
+    padding: 64x 0;
+ }
 `;
 
 
@@ -25,4 +31,33 @@ export const Links = styled.ul`
         }
     }
     
+`;
+
+export const Content = styled.div`
+    // Largura da box main + o ajuste dela para centralizar na página
+    max-width: 550px;
+    margin: 0 auto;
+
+
+    display: flex;
+    flex-direction: column;
+
+    // Alinhando o botão para a direita
+    > button:first-child{
+        align-self: end;
+    }
+
+    // Ajustando o h1 dentro do content
+    > h1 {
+        font-size: 36px;
+        font-weight: 500;
+        padding-top: 60px;
+    }
+
+    // Ajustando a tag p de dentro do content
+    p {
+        font-size: 16px;
+        margin-top: 16px;
+        text-align: justify;
+    }
 `;

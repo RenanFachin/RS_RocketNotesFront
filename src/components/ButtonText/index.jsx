@@ -1,13 +1,12 @@
 import { Container } from './style'
 
-export function ButtonText({title, ...rest}){
+export function ButtonText({ title, ...rest }){
     return(
         <Container 
-        type="button"
-        {...rest}
+            type="button"
+            {...rest}
         >
             {title}
-            
         </Container>
     );
 }

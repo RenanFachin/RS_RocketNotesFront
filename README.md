@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo Explorer" title="Explorer" src="./assets/logoExplorer.png">
+  <img alt="Logo Explorer" title="Explorer" src="https://i.imgur.com/2IqqDoo.png">
 </div>
 <br>
 <div align="center">

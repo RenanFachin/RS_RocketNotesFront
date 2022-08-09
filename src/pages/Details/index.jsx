@@ -3,7 +3,7 @@
 // Se não quiser fazer o import, pode se utilizar desta propriedade usando apenas <> </>
 
 // Fazendo o IMPORT do styled component
-import { Container, Links } from './styles'
+import { Container, Links, Content } from './styles'
 
 
 // Fazendo o IMPORT do component HEADER
@@ -27,22 +27,31 @@ export function Details(){
     <Container>
       <Header/>
 
-      <ButtonText title="Excluir a nota"/>
+        <main>
+          <Content>
 
-      <Section title="Links úteis">
-        <Links>
-          <li><a href="#">https://www.rockeseat.com.br</a></li>
-          <li><a href="#">https://www.rockeseat.com.br</a></li>
-        </Links>
-      </Section>
 
-      <Section title="Marcadores">
-        <Tag title = "express"></Tag>
-        <Tag title = "nodejs"></Tag>
-      </Section>
+        <ButtonText title="Excluir a nota"/>
+
+        <h1>Introdução ao React</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque doloremque, earum vero mollitia nulla exercitationem. Sequi atque id quasi odit quaerat tempora velit, quis doloremque dolores delectus expedita ab suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ipsa dignissimos cum aspernatur pariatur totam tempora inventore esse iusto ex reprehenderit fugiat corporis excepturi nam, deleniti consectetur quibusdam voluptatum culpa.</p>
+
+        <Section title="Links úteis">
+          <Links>
+            <li><a href="#">https://www.rockeseat.com.br</a></li>
+            <li><a href="#">https://www.rockeseat.com.br</a></li>
+          </Links>
+        </Section>
+
+        <Section title="Marcadores">
+          <Tag title = "express"></Tag>
+          <Tag title = "nodejs"></Tag>
+        </Section>
 
       
-      <Button title="Voltar" />
+        <Button title="Voltar" />
+        </Content>
+      </main>
     </Container>
   )
 }
