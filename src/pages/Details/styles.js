@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
 
 export const Container = styled.div`
  width: 100%;
@@ -11,4 +11,18 @@ export const Container = styled.div`
  grid-template-areas:
  "header"
  "content"
+`;
+
+
+export const Links = styled.ul`
+    list-style: none;
+
+    > li{
+        margin-top: 12px;
+    
+        a{
+            color: ${({theme})=> theme.COLORS.ORANGE};      
+        }
+    }
+    
 `;
