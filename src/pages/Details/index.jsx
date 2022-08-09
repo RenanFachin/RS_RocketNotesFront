@@ -14,6 +14,8 @@ import { Button } from '../../components/Button'
 import { Section } from '../../components/Section'
 // Fazendo o IMPORT do component TAG
 import { Tag } from '../../components/Tag'
+// Fazendo o IMPORT do component BUTTONTEXT
+import { ButtonText } from '../../components/ButtonText'
 
 
 // é necessário exportar a função (export)
@@ -24,6 +26,8 @@ export function Details(){
     // Fragment <> para agrupar os elementos
     <Container>
       <Header/>
+
+      <ButtonText title="Excluir a nota"/>
 
       <Section title="Links úteis">
         <Links>
