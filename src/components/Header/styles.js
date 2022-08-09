@@ -47,5 +47,15 @@ export const Profile = styled.div`
             color: ${({theme}) => theme.COLORS.WHITE}
         }
     }
+`;
 
+export const Logout = styled.button`
+    border: none;
+    background: none;
+
+    // O ícone é um svg, e um svg permite que seja aplicado estilos
+    > svg {
+        color: ${({theme}) => theme.COLORS.GRAY_100};
+        font-size: 32px;
+    }
 `;

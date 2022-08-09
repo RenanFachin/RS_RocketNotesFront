@@ -1,6 +1,8 @@
-// criando a estrutura para receber o styles.js
+// Importando biblioteca de icones
+import { RiShutDownLine } from 'react-icons/ri'
 
-import { Container, Profile } from './styles'; // Fazendo o import do styles.js que tbm está dentro da pasta HEADER
+// criando a estrutura para receber o styles.js
+import { Container, Profile, Logout } from './styles'; // Fazendo o import do styles.js que tbm está dentro da pasta HEADER
 
 export function Header(){
     return(
@@ -14,7 +16,11 @@ export function Header(){
                     <strong>Renan Fachin</strong>
                 </div>
             </Profile>
-            
+
+            <Logout>
+                <RiShutDownLine/>
+            </Logout>
+
         </Container>
     )
 }
