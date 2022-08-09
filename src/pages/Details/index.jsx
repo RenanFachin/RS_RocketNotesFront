@@ -12,6 +12,8 @@ import { Header } from '../../components/Header'
 import { Button } from '../../components/Button'
 // Fazendo o IMPORT do component SECTION
 import { Section } from '../../components/Section'
+// Fazendo o IMPORT do component TAG
+import { Tag } from '../../components/Tag'
 
 
 // é necessário exportar a função (export)
@@ -29,6 +31,12 @@ export function Details(){
           <li><a href="#">https://www.rockeseat.com.br</a></li>
         </Links>
       </Section>
+
+      <Section title="Marcadores">
+        <Tag title = "express"></Tag>
+        <Tag title = "nodejs"></Tag>
+      </Section>
+
       
       <Button title="Voltar" />
     </Container>
