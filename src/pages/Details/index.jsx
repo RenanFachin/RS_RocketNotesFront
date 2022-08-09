@@ -5,9 +5,12 @@
 // Fazendo o IMPORT do styled component
 import { Container } from './styles'
 
+// Fazendo o IMPORT do component HEADER
+import { Header } from '../../components/Header'
 // Fazendo o IMPORT do component (estilização padrão para os botões) Button
 import { Button } from '../../components/Button'
- 
+
+
 // é necessário exportar a função (export)
 export function Details(){
 
@@ -15,11 +18,8 @@ export function Details(){
     // Onde estará o conteúdo da interface
     // Fragment <> para agrupar os elementos
     <Container>
-    <h1>Hello world!</h1>
-    <span>Renan</span>
-
-    <Button title="Entrar" loading />
-    <Button title="Cadastrar" />
+      <Header/>
+      
     <Button title="Voltar" />
     </Container>
   )
