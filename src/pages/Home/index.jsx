@@ -1,25 +1,31 @@
-import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
+import { Container, Brand, Menu, Search, Content, NewNote } from '../Home/styles'
 
-// Importando o componente - HEADER
-import { Header } from '../../components/Header';
+import { Header } from '../../components/Header'
 
 export function Home(){
-    return (
+    return(
         <Container>
             <Brand>
                 <h1>RocketNotes</h1>
             </Brand>
-            
+
             <Header/>
 
-            <Menu></Menu>
+            <Menu>
 
-            <Search></Search>
+            </Menu>
 
-            <Content></Content>
+            <Search>
 
-            <NewNote></NewNote>
+            </Search>
 
+            <Content>
+
+            </Content>
+
+            <NewNote>
+
+            </NewNote>
         </Container>
     )
 }
