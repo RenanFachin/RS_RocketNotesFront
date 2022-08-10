@@ -52,6 +52,7 @@ export function Details(){
         <Button title="Voltar" />
         </Content>
       </main>
+      
     </Container>
   )
 }
