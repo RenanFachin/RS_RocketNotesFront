@@ -31,7 +31,12 @@ export const Brand = styled.div`
     
     > h1 {
         font-size: 24px;
-        color: ${({ theme }) => theme.COLORS.ORANGE};
+        letter-spacing: 1px;
+        color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+        span{
+            color: ${({ theme }) => theme.COLORS.ORANGE};
+        }
     }
 `;
 
@@ -59,5 +64,17 @@ export const Content = styled.div`
 
 export const NewNote = styled.button`
     grid-area: newnote;
-    background: cyan;
+
+
+    background-color: ${({ theme }) => theme.COLORS.ORANGE};
+
+    border: none; // removendo as bordas do botão
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // acessando o svg do ícone importado
+    > svg{
+        margin-right: 8px;
+    }
 `;
