@@ -11,7 +11,7 @@ export const Container = styled.div`
     margin-bottom: 8px;
     border-radius: 10px;
 
-     > input {
+    > input {
         height: 56px;
         width: 100%;
         padding: 12px;
@@ -23,8 +23,10 @@ export const Container = styled.div`
             color: ${({theme}) => theme.COLORS.GRAY_300};
         }
 
-        > svg {
+
+    }
+
+    > svg {
             margin-left: 16px;
-        }
-     }
+    }
 `;

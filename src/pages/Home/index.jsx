@@ -1,5 +1,5 @@
 // Importando um ícone
-import { FiPlus } from 'react-icons/fi' 
+import { FiPlus, FiSearch } from 'react-icons/fi' 
 
 import { Container, Brand, Menu, Search, Content, NewNote } from '../Home/styles'
 
@@ -23,7 +23,7 @@ export function Home(){
             </Menu>
 
             <Search>
-
+                <Input placeholder="Pesquisar pelo título" icon={FiSearch}/>
             </Search>
 
             <Content>
