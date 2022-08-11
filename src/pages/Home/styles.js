@@ -60,7 +60,6 @@ export const Search = styled.div`
 
 export const Content = styled.div`
     grid-area: content;
-    background: yellow;
 `;
 
 export const NewNote = styled.button`
