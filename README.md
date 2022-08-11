@@ -31,10 +31,11 @@ Futuramente estas páginas serão anexadas junto ao back-end para que seja uma a
 
 #
 ### 📘 Ferramentas utilizadas
-  `reactJS`
-  `ViteJS`
-  `Styled-components`
-  `react-icons`
+  - Biblioteca para criação de interfaces: `reactJS`
+  - Setup para criar o projeto no React: `ViteJS`
+  - CSS-in-JS: `Styled-components`
+  - Biblioteca de ícones: `react-icons`
+ #
 <br>
 
 ### 💻 Programas utilizados para teste e desenvolvimento
