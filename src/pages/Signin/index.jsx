@@ -29,6 +29,11 @@ export function SignIn(){
 
                 <Button title="Entrar" />
 
+
+                <a href='#'>
+                    Criar conta
+                </a>
+
             </Form>
         </Container>
     )

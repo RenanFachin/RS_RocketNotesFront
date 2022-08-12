@@ -31,4 +31,17 @@ export const Form = styled.form`
         margin-top: 84px;
         margin-bottom: 24px;
     }
+
+    > p{
+        // Fazendo a estilização do p dentro do Form
+        font-size: 14px;
+        color: ${({theme})=>theme.COLORS.GRAY_100}
+    }
+
+    > a{
+        // Fazeno a estilização do a dentro do form
+        text-decoration: none;
+        margin-top: 124px;
+        color: ${({theme})=>theme.COLORS.ORANGE}
+    }
 `;
