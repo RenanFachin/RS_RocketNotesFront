@@ -4,6 +4,7 @@ import { FiMail, FiLock, FiUser} from 'react-icons/fi' // Fazendo o import de um
 import { Input } from '../../components/Input'; // Importando o componente INPUT
 import { Button } from '../../components/Button'; // Importando o componente BUTTON
 
+import {Link} from 'react-router-dom'
 
 // Criando a função signIn que vai conter os elementos de styles e será utilizado para renderizar a página
 export function SignUp(){
@@ -38,9 +39,9 @@ export function SignUp(){
                 <Button title="Cadastrar" />
 
 
-                <a href='#'>
+                <Link to='/'>
                     Voltar para página de Login
-                </a>
+                </Link>
 
             </Form>
         </Container>

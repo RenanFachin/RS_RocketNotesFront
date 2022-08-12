@@ -4,6 +4,7 @@ import { FiMail, FiLock} from 'react-icons/fi' // Fazendo o import de um ícone 
 import { Input } from '../../components/Input'; // Importando o componente INPUT
 import { Button } from '../../components/Button'; // Importando o componente BUTTON
 
+import { Link } from 'react-router-dom' // Import de um padrão de navegação
 
 // Criando a função signIn que vai conter os elementos de styles e será utilizado para renderizar a página
 export function SignIn(){
@@ -30,9 +31,9 @@ export function SignIn(){
                 <Button title="Entrar" />
 
 
-                <a href='#'>
+                <Link to='/register'>
                     Criar conta
-                </a>
+                </Link>
 
             </Form>
 
