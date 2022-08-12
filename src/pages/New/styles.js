@@ -12,6 +12,13 @@ export const Container = styled.div`
     grid-template-areas: 
     "header"
     "content";
+
+    //Deixando a div de className=tags aparecendo os elementos lado a lado e não um em cima do outro
+    .tags{
+        display:flex;
+        justify-content: space-between;
+        flex-wrap: wrap; // Quando não couber mais na linha, ele vai jogar automaticamente para baixo
+    }
 `;
 
 export const Form = styled.form`
