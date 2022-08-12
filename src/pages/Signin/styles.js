@@ -18,4 +18,17 @@ export const Form = styled.form`
     align-items: center;
 
     text-align: center;
+
+    > h1 {
+        // Fazendo a estilização do h1 dentro do Form
+        font-size: 48px;
+        color: ${({theme})=>theme.COLORS.ORANGE}
+    }
+
+    > h2 {
+        // Fazendo a estilização do h2 dentro do Form
+        font-size: 24px;
+        margin-top: 84px;
+        margin-bottom: 24px;
+    }
 `;
