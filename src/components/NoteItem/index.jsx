@@ -6,7 +6,7 @@ import { Container } from './styles' // Importando o componente criado pelo styl
 //inNew={isNew} -> Atribuindo esta propriedade para o Container que será criado dentro de styles
 export function NoteItem({isNew, value, onClick, ...rest}){
     return(
-        <Container inNew={isNew}>
+        <Container isNew={isNew}>
             <input 
             type="text"
             value={value}
