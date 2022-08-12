@@ -17,6 +17,8 @@ export function NoteItem({isNew, value, onClick, ...rest}){
             <button 
             type="button"
             onClick={onClick}
+            // Aplicando uma classe de maneira condicional
+            className={isNew ? `button-add` : `button-delete`}
             >
                 {isNew ? <FiPlus/> : <FiX/>}
                 {/* se isNew for true mostra o FiPlus. se for false, irá mostrar o FiX */}
