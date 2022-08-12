@@ -6,10 +6,11 @@
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/RenanFachin/RS_RocketNotesFront?color=%23725CED&style=flat-square">
 </div>
 
-
 # ROCKET NOTES
 Desenvolvimento das páginas de front-end para a aplicação RocketNotes. O projeto está sendo desenvolvido durante o stage 09 do programa Explorer.
 Futuramente estas páginas serão anexadas junto ao back-end para que seja uma aplicação completa.
+
+<img src="https://i.imgur.com/zX5v21n.jpg">
 
 <br>
 <h3 align="center">Desenvolvido em: </h3>
