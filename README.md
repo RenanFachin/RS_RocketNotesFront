@@ -31,11 +31,12 @@ Futuramente estas páginas serão anexadas junto ao back-end para que seja uma a
 - Página da criação de uma nota
 
 #
-### 📘 Ferramentas utilizadas
+### 📘 Ferramentas/Bibliotecas utilizadas
   - Biblioteca para criação de interfaces: `reactJS`
   - Setup para criar o projeto no React: `ViteJS`
   - CSS-in-JS: `Styled-components`
   - Biblioteca de ícones: `react-icons`
+  - Lib de navegação do projeto: `react-router-dom`
  #
 <br>
 
