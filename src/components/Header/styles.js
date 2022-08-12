@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-
+import { Link } from 'react-router-dom'
 
 export const Container = styled.header`
     grid-area: header; // Estratégia para a navegação da página ficar fixa no topo ao usar o scroll
@@ -18,7 +18,7 @@ export const Container = styled.header`
     padding: 0 80px;
 `;
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
     display: flex;
     align-items: center;
 
