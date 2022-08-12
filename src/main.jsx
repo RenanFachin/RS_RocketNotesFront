@@ -6,14 +6,14 @@ import theme from './styles/theme' // importando o theme criado
 import GlobalStyle from './styles/global' // importando o globalstyles
 
 
-import { New } from './pages/New' // está buscando o index de dentro da pasta details
+import { Routes } from './routes' // está buscando o index de dentro da pasta details
 // {} para importação sem o default, precisa usar exatamente o mesmo nome dentro da função
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <New/>
+      <Routes/>
     </ThemeProvider>
   </React.StrictMode>
 )
