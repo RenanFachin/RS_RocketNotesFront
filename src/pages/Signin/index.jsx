@@ -1,4 +1,4 @@
-import { Container } from './styles'; // Importando o elemento Container criado no style.js
+import { Container, Form } from './styles'; // Importando o elemento Container criado no style.js
 import { FiMail, FiLock} from 'react-icons/fi' // Fazendo o import de um ícone da bibliteca react-icons
 
 import { Input } from '../../components/Input'; // Importando o componente INPUT
@@ -27,9 +27,7 @@ export function SignIn(){
                     icon={FiLock}
                 />
 
-                <Button>
-                    Entrar
-                </Button>
+                <Button title="Entrar" />
 
             </Form>
         </Container>
