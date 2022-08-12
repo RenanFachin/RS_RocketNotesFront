@@ -13,6 +13,13 @@ export const Container = styled.div`
     "header"
     "content";
 
+    > main {
+        // Pegando a tag main dentro do Content
+        // Com essas estilizações, o bcabeçalho sempre estará fixo no topo da tela e somente o main será scrolado
+        grid-area: content;
+        overflow-y: auto;
+    }
+
     //Deixando a div de className=tags aparecendo os elementos lado a lado e não um em cima do outro
     .tags{
         display:flex;
