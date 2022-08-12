@@ -12,5 +12,22 @@ export const Container = styled.div`
     grid-template-areas: 
     "header"
     "content";
+`;
 
+export const Form = styled.form`
+    max-width: 550px;
+    margin: 38px auto;  // Para centralizar
+
+    > header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; // Deixar criar nota de um lado e o voltar do outro
+
+        margin-bottom: 36px;
+
+        a{
+            font-size: 20px;
+            color: ${({theme})=> theme.COLORS.GRAY_100}
+        }
+    }
 `;
