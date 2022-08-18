@@ -13,6 +13,11 @@ export function SignUp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+
+    function hangleSignUp(){
+        console.log(name, email, password)
+    }
+
     return (
         <Container>
             <Background />
@@ -44,7 +49,7 @@ export function SignUp(){
                     onChange={e => setPassword(e.target.value)}
                 />
 
-                <Button title="Cadastrar" />
+                <Button title="Cadastrar" onClick={hangleSignUp}/>
 
 
                 <Link to='/'>
