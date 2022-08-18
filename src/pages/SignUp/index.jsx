@@ -15,7 +15,14 @@ export function SignUp(){
 
 
     function hangleSignUp(){
-        console.log(name, email, password)
+        // Criando uma verificação para saber se todos os campos foram preenchidos
+        // Se não nome ou não email ou não password
+        if(!name || !email || !password){
+            // return aqui é para não deixar a função prosseguir
+            return alert("Preencha todos os campos!")
+        }
+
+
     }
 
     return (
