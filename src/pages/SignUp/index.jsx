@@ -1,3 +1,4 @@
+import { useState } from "react" // Importa o useSate que cria estado
 import { Container, Form, Background } from './styles'; // Importando o elemento Container criado no style.js
 import { FiMail, FiLock, FiUser} from 'react-icons/fi' // Fazendo o import de um ícone da bibliteca react-icons
 
@@ -8,6 +9,10 @@ import {Link} from 'react-router-dom'
 
 // Criando a função signIn que vai conter os elementos de styles e será utilizado para renderizar a página
 export function SignUp(){
+    const [name, setName] = useState(""); // O hook que cria o estado
+    const [email, setemail] = useState("");
+    const [password, setpassword] = useState("");
+
     return (
         <Container>
             <Background />
