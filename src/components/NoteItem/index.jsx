@@ -1,4 +1,5 @@
-import { FiPlus, FiX} from 'react-icons/Fi' // Importando ícones de uma biblioteca externa
+
+import { FiPlus, FiX} from 'react-icons/fi' // Importando ícones de uma biblioteca externa
 
 import { Container } from './styles' // Importando o componente criado pelo styles
 
