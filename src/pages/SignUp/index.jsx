@@ -10,8 +10,8 @@ import {Link} from 'react-router-dom'
 // Criando a função signIn que vai conter os elementos de styles e será utilizado para renderizar a página
 export function SignUp(){
     const [name, setName] = useState(""); // O hook que cria o estado
-    const [email, setemail] = useState("");
-    const [password, setpassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
         <Container>
@@ -27,18 +27,21 @@ export function SignUp(){
                     placeholder = "Nome"
                     type= "text"
                     icon={FiUser}
+                    onChange={e => setName(e.target.value)}
                 />
 
                 <Input
                     placeholder = "E-mail"
                     type= "text"
                     icon={FiMail}
+                    onChange={e => setEmail(e.target.value)}
                 />
 
                 <Input
                     placeholder = "Senha"
                     type= "password"
                     icon={FiLock}
+                    onChange={e => setPassword(e.target.value)}
                 />
 
                 <Button title="Cadastrar" />
