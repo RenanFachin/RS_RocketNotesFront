@@ -17,7 +17,7 @@ export function SignUp(){
 
     const navigate = useNavigate()
 
-    function hangleSignUp(){
+    function handleSignUp(){
         // Criando uma verificação para saber se todos os campos foram preenchidos
         // Se não nome ou não email ou não password
         if(!name || !email || !password){
@@ -74,7 +74,7 @@ export function SignUp(){
                     onChange={e => setPassword(e.target.value)}
                 />
 
-                <Button title="Cadastrar" onClick={hangleSignUp}/>
+                <Button title="Cadastrar" onClick={handleSignUp}/>
 
 
                 <Link to='/'>

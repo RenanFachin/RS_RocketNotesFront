@@ -6,8 +6,12 @@ import { Button } from '../../components/Button'; // Importando o componente BUT
 
 import { Link } from 'react-router-dom' // Import de um padrão de navegação
 
+import { useAuth } from '../../hooks/auth'; // Importando o contexto criado
+
 // Criando a função signIn que vai conter os elementos de styles e será utilizado para renderizar a página
 export function SignIn(){
+    const data = useAuth(); // Acessando o hook criado
+    console.log("Meu contexto;", data);
     return (
         <Container>
             <Form>
