@@ -44,6 +44,16 @@ function AuthProvider({ children }){
 
     }
 
+    function signOut (){
+        // Para se fazer um logout, não precisa passar nenhum dado.
+        // Apenas será necessário apagar as informações que estão no localstorage
+        localStorage.removeItem("@rocketnotes:token")
+        localStorage.removeItem("@rocketnotes:user")
+
+        // Voltando ao objeto vazio, passando a ter um estado de user vazio e levando a página de login (AuthRoutes) novamente
+        setData({})
+    }
+
     useEffect(()=> {
         // usar exatamente a mesma chave
         const token = localStorage.getItem("@rocketnotes:token")
@@ -63,7 +73,11 @@ function AuthProvider({ children }){
     }, [])
 
     return (
-        <AuthContext.Provider value={{ signIn, user: data.user }}>
+        <AuthContext.Provider value={{ 
+            signIn, 
+            signOut,
+            user: data.user,
+            }}>
             {children}
         </AuthContext.Provider>
     )
