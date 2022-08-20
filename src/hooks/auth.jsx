@@ -29,7 +29,7 @@ function AuthProvider({ children }){
             localStorage.setItem("@rocketnotes:token", token);
 
             // Inserindo um token de autenticação no cabeçalho de todas as requisições que usuário fará apartir de seu login
-            api.defaults.headers.authorization = `Bear ${token}`;
+            api.defaults.headers.common['Authorization'] = `Bear ${token}`;
 
             // Armazendando as informações
             setData({user,token})
@@ -61,7 +61,7 @@ function AuthProvider({ children }){
 
         // if para garantir que ambos dados tenham sido informados
         if(token && user){
-            api.defaults.headers.authorization = `Bear ${token}`;
+            api.defaults.headers.common['Authorization'] = `Bear ${token}`;
 
             setData({
                 token,
