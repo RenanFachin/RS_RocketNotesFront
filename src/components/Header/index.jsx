@@ -1,10 +1,16 @@
 // Importando biblioteca de icones
 import { RiShutDownLine } from 'react-icons/ri'
 
+// Importando o hook
+import { useAuth } from '../../hooks/auth'
+
 // criando a estrutura para receber o styles.js
 import { Container, Profile, Logout } from './styles'; // Fazendo o import do styles.js que tbm está dentro da pasta HEADER
 
 export function Header(){
+    // Acessando ao signOut de dentro de useAuth
+    const { signOut } = useAuth();
+
     return(
         <Container>
 
@@ -17,7 +23,7 @@ export function Header(){
                 </div>
             </Profile>
 
-            <Logout>
+            <Logout onClick={signOut}>
                 <RiShutDownLine/>
             </Logout>
 
