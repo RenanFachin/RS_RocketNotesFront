@@ -23,13 +23,12 @@ export function SignUp(){
         if(!name || !email || !password){
             // return aqui é para não deixar a função prosseguir
             return alert("Preencha todos os campos!")
-
-            navigate("/") // Redireciona o usuário diretamente a tela de login após o cadastro
         }
         // Fazendo o post na rota de cadastro de usuários
         api.post("/users", { name, email, password})
         .then(()=>{
             alert("Usuário cadastrado com sucesso!")
+            navigate("/") // Redireciona o usuário diretamente a tela de login após o cadastro
         }) 
         .catch(error => {
             if(error.response){

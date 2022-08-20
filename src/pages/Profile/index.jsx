@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 
 export function Profile(){
     // Fazendo a importação de user e fazendo o uso das propriedades contidas nele
-    const {user} = useAuth();
+    const {user, updateProfile } = useAuth();
     const [name,setName] = useState(user.name);
     const [email,setEmail] = useState(user.email);
 
@@ -19,6 +19,18 @@ export function Profile(){
     const [passwordOld,setPasswordOld] = useState();
     const [passwordNew,setPasswordNew] = useState();
 
+    // Função para update
+    async function handleUpdate(){
+        // primeiro criando um objeto user
+        const user = {
+            name,
+            email,
+            password: passwordNew,
+            old_password: passwordOld,
+        };
+
+        await updateProfile({ user });
+    }
 
     return(
         <Container>
@@ -76,7 +88,7 @@ export function Profile(){
                 onChange={e=> setPasswordNew(e.target.value)}
                 />
 
-                <Button title="Salvar" />
+                <Button title="Salvar" onClick={handleUpdate}/>
 
             </Form>
 
