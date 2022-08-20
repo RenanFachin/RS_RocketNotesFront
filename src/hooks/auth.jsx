@@ -24,6 +24,10 @@ function AuthProvider({ children }){
             // Destruturando o data para voltar somente os dados de user e o token de login
             const { user, token } = response.data
 
+            // Utilizando o localStorage
+            localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
+            localStorage.setItem("@rocketnotes:token", token);
+
             // Inserindo um token de autenticação no cabeçalho de todas as requisições que usuário fará apartir de seu login
             api.defaults.headers.authorization = `Bear ${token}`;
 
