@@ -7,6 +7,9 @@ import {useAuth} from '../../hooks/auth' // Importando o hook de autenticação 
 import {Input} from '../../components/Input'
 import {Button} from '../../components/Button'
 
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+import { api } from '../../services/api'
+
 import { Link } from 'react-router-dom'
 
 export function Profile(){
@@ -20,7 +23,9 @@ export function Profile(){
     const [passwordNew,setPasswordNew] = useState();
 
     // Trocando avatar
-    const [avatar, setAvatar] = useState(user.avatar)
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
+    const [avatar, setAvatar] = useState(avatarUrl)
     const [avatarFile, setAvatarFile] = useState(null)
 
     // Função para update
@@ -33,7 +38,7 @@ export function Profile(){
             old_password: passwordOld,
         };
 
-        await updateProfile({ user, avatarFile});
+        await updateProfile({ user, avatarFile });
     }
 
     function handleChangeAvatar(event){
