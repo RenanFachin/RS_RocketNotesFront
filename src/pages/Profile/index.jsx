@@ -19,6 +19,10 @@ export function Profile(){
     const [passwordOld,setPasswordOld] = useState();
     const [passwordNew,setPasswordNew] = useState();
 
+    // Trocando avatar
+    const [avatar, setAvatar] = useState(user.avatar)
+    const [avatarFile, setAvatarFile] = useState(null)
+
     // Função para update
     async function handleUpdate(){
         // primeiro criando um objeto user
@@ -29,7 +33,16 @@ export function Profile(){
             old_password: passwordOld,
         };
 
-        await updateProfile({ user });
+        await updateProfile({ user, avatarFile});
+    }
+
+    function handleChangeAvatar(event){
+        const file = event.target.files[0];
+        setAvatarFile(file);
+
+        // toda vez que for modificado a imagem
+        const imagePreview = URL.createObjectURL(file)
+        setAvatar(imagePreview)
     }
 
     return(
@@ -42,7 +55,7 @@ export function Profile(){
 
             <Form>
             <Avatar>
-                <img src="https://github.com/RenanFachin.png"
+                <img src={avatar}
                 alt="Foto do usuário" />
 
 
@@ -53,6 +66,7 @@ export function Profile(){
                      id="avatar"
                      // mesmo id do html for
                      type="file"
+                     onChange={handleChangeAvatar}
                     />
                 </label>
             </Avatar>

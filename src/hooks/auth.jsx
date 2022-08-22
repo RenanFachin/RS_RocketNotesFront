@@ -54,8 +54,18 @@ function AuthProvider({ children }){
         setData({})
     }
 
-    async function updateProfile({ user }){
+    async function updateProfile({ user, avatarFile }){
         try{
+
+            if(avatarFile){
+                // enviando para o backend
+                const fileUploadForm = new FormData()
+                fileUploadForm.append("avatar", avatarFile)
+
+                const response = await api.patch("/uers/avatar", fileUploadForm)
+
+                user.avatar = response.data.avatar
+            }
 
             await api.put("/users", user);
             // setItem faz a substituição também
