@@ -13,8 +13,23 @@ import { api } from '../../services/api'
 
 export function Home(){
     const [tags, setTags] = useState([]);
+    const [tagsSelected, setTagsSelected] = useState([]);
 
+    function handleTagsSelected(tagName){
+        // Sabendo se a tag já está selecionada
+        // verificando com o .includes se a tagName selecionada já existe dentro da lista de tags
+        const alreadySelected = tagsSelected.includes(tagName)
+        // Clicando numa tag já selecionada o seu retorno TRUE
+        // Clicando numa tag não selecionada, vai retornar FALSE
 
+        if(alreadySelected){
+            const filteredTags = tagsSelected.filter(tag => tag != tagName)
+            setTagsSelected(filteredTags)
+        } else {
+            setTagsSelected(prevState => [...prevState, tagName])
+        }
+
+    }
 
     useEffect(()=>{
         async function fetchTags(){
@@ -36,13 +51,20 @@ export function Home(){
             <li>
                 <ButtonText
                 title="Todos"
-                isActive
+                onClick={() => handleTagsSelected("all")}
+                isActive={tagsSelected.length === 0}
                 />
             </li>
                 {
                     // Verificando se existe tags
                     tags && tags.map(tag => (
-                        <li key={String(tag.id)}><ButtonText title={tag.name} /></li>
+                        <li key={String(tag.id)}>
+                            <ButtonText
+                            title={tag.name} 
+                            onClick={() => handleTagsSelected(tag.name)}
+                            isActive={tagsSelected.includes(tag.name)}
+                            />
+                            </li>
                 ))
                 }
             </Menu>
