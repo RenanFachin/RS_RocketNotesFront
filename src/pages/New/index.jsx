@@ -53,6 +53,21 @@ export function New(){
     }
 
     async function handleNewNote(){
+        // criando validações
+        // se o tittle for vazio
+        if(!title){
+            return alert("Digite o título da nota!!")
+        }
+        
+        // criando uma condição para saber se existe coisa dentro da newtag e newlink
+        if(newLink){
+            return alert("Você deixou um link no campo para adicionar, porém, não clicou em adicionar link.")
+        }
+        if(newTag){
+            return alert("Você deixou uma tag no campo para adicionar, porém, não clicou em adicionar tag.")
+        }
+
+
         await api.post("/notes", {
             title,
             description,
