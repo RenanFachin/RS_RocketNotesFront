@@ -31,7 +31,7 @@ export function Details(){
   const navigate = useNavigate();
 
   function handleBack(){
-    navigate("/");
+    navigate(-1)
   }
 
   // Função de deletar nota

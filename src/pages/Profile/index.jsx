@@ -9,8 +9,8 @@ import {Button} from '../../components/Button'
 
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 import { api } from '../../services/api'
+import { useNavigate } from "react-router-dom"
 
-import { Link } from 'react-router-dom'
 
 export function Profile(){
     // Fazendo a importação de user e fazendo o uso das propriedades contidas nele
@@ -28,6 +28,8 @@ export function Profile(){
     const [avatar, setAvatar] = useState(avatarUrl)
     const [avatarFile, setAvatarFile] = useState(null)
 
+    const navigate = useNavigate()
+
     // Função para update
     async function handleUpdate(){
         // primeiro criando um objeto user
@@ -39,6 +41,10 @@ export function Profile(){
         };
 
         await updateProfile({ user, avatarFile });
+    }
+
+    function handleBack(){
+        navigate(-1)
     }
 
     function handleChangeAvatar(event){
@@ -53,9 +59,9 @@ export function Profile(){
     return(
         <Container>
             <header>
-                <Link to="/">
+                <button type="button" onClick={handleBack}>
                     <FiArrowLeft/>
-                </Link>
+                </button>
             </header>
 
             <Form>

@@ -5,8 +5,7 @@ import {TextArea} from '../../components/TextArea'
 import {NoteItem} from '../../components/NoteItem'
 import {Section} from '../../components/Section'
 import {Button} from '../../components/Button'
-
-import {Link} from 'react-router-dom'
+import {ButtonText} from '../../components/ButtonText'
 
 import {Container, Form} from './styles'
 
@@ -27,6 +26,11 @@ export function New(){
     const [newTag, setNewTag] = useState("");
 
     const navigate = useNavigate()
+
+    
+    function handleBack(){
+        navigate(-1)
+    }
 
     function handleAddLink(){
         // acessando o conteudo anterior armazenado no estado e montando um novo array com tudo que tinha antes + o item adicionado
@@ -76,7 +80,7 @@ export function New(){
         })
 
         alert("Nota cadastrada com sucesso!!")
-        navigate("/") // levando o usuário para a home após cadastrar
+        navigate(-1) // levando o usuário para a home após cadastrar
     }
 
     return(
@@ -88,7 +92,10 @@ export function New(){
                 <Form>
                     <header>
                         <h1>Criar nota</h1>
-                        <Link to="/">voltar</Link>
+                        <ButtonText 
+                        title="voltar" 
+                        onClick={handleBack}
+                        />
                     </header>
 
                     <Input 
