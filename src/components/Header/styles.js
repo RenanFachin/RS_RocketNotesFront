@@ -43,7 +43,7 @@ export const Profile = styled(Link)`
         }
 
         strong {
-            font-size: 16px;
+            font-size: 18px;
             color: ${({theme}) => theme.COLORS.WHITE}
         }
     }

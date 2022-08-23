@@ -33,14 +33,16 @@ export function Profile(){
     // Função para update
     async function handleUpdate(){
         // primeiro criando um objeto user
-        const user = {
+        const updated = {
             name,
             email,
             password: passwordNew,
             old_password: passwordOld,
         };
 
-        await updateProfile({ user, avatarFile });
+        const userUpdated = Object.assign(user, updated)
+
+        await updateProfile({ user: userUpdated, avatarFile });
     }
 
     function handleBack(){
