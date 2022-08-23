@@ -2,6 +2,10 @@
 // Só é necessário este import caso se deseje utilizar <Frament> </Fragment> como caixa de conteúdo
 // Se não quiser fazer o import, pode se utilizar desta propriedade usando apenas <> </>
 
+import { useParams, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { api } from '../../services/api'
+
 // Fazendo o IMPORT do styled component
 import { Container, Links, Content } from './styles'
 
@@ -18,8 +22,27 @@ import { Tag } from '../../components/Tag'
 import { ButtonText } from '../../components/ButtonText'
 
 
+
 // é necessário exportar a função (export)
 export function Details(){
+  const [data, setData] = useState(null);
+
+  const params = useParams();
+  const navigate = useNavigate();
+
+  function handleBack(){
+    navigate("/");
+  }
+
+  useEffect(() => {
+    async function fetchNote(){
+      const response = await api.get(`/notes/${params.id}`)
+      setData(response.data);
+    }
+
+    // executando a função
+    fetchNote()
+  },[]);
 
   return (
     // Onde estará o conteúdo da interface
@@ -27,32 +50,64 @@ export function Details(){
     <Container>
       <Header/>
 
+{
+  // Só mostrando se tem conteudo
+  data &&
         <main>
           <Content>
 
 
-        <ButtonText title="Excluir a nota"/>
+          <ButtonText title="Excluir a nota"/>
 
-        <h1>Introdução ao React</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque doloremque, earum vero mollitia nulla exercitationem. Sequi atque id quasi odit quaerat tempora velit, quis doloremque dolores delectus expedita ab suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ipsa dignissimos cum aspernatur pariatur totam tempora inventore esse iusto ex reprehenderit fugiat corporis excepturi nam, deleniti consectetur quibusdam voluptatum culpa.</p>
+            <h1>
+              {data.title}
+            </h1>
 
-        <Section title="Links úteis">
-          <Links>
-            <li><a href="#">https://www.rockeseat.com.br</a></li>
-            <li><a href="#">https://www.rockeseat.com.br</a></li>
-          </Links>
-        </Section>
+            <p>
+              {data.description}
+            </p>
 
-        <Section title="Marcadores">
-          <Tag title = "express"></Tag>
-          <Tag title = "nodejs"></Tag>
-        </Section>
+            {
+            // verificando se existe algo dentro
+            data.links &&
+              <Section title="Links úteis">
+                <Links>
+                {/* percorrendo se existir */}
+                  {
+                    data.links.map(link => (
+                      <li key={String(link.id)}>
+                        <a href={link.url} target="_blank">
+                          {link.url}
+                        </a>
+                      </li>
+                  ))
+                }
+              </Links>
+            </Section>
+            }
 
+            {
+              data.tags &&
+            <Section title="Marcadores">
+              {
+                data.tags.map(tag=>(
+                  <Tag
+                    key = {String(tag.id)}
+                    title = {tag.name}
+                  />
+                ))
+              }
+            </Section>
+            }
       
-        <Button title="Voltar" />
+        <Button 
+        title="Voltar" 
+        onClick={handleBack}
+        />
         </Content>
-      </main>
-      
+        </main>
+}
+
     </Container>
   )
 }
