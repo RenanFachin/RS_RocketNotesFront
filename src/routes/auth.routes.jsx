@@ -3,14 +3,14 @@ import { Routes, Route } from 'react-router-dom'
 //Route é para cada rota
 
 
-import { SignIn } from '../pages/SignIn'
+import { Signin } from '../pages/Signin'
 import { SignUp } from '../pages/SignUp'
 
 
 export function AuthRoutes(){
     return(
         <Routes>
-            <Route path="/" element={<SignIn />} />
+            <Route path="/" element={<Signin />} />
             <Route path="/register" element={<SignUp />} />
         </Routes>
     )
